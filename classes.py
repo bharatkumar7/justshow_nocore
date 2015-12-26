@@ -1,5 +1,7 @@
-class symbol:
- 'Common base class for all symbols'
+class Symbol:
+ '''
+ Common base class for all symbols
+ '''
  maxtick = 20 # 20 for MACD   max ticks to store for analysis say 5 min = 5*60
  ntick = -1
  risk = 4
@@ -12,13 +14,13 @@ class symbol:
  work_dir = ''
    
   
- def __init__(self, tname, rname, type, strategy, status, bprice, sprice, bd, stop_loss, perc, btime, stime,\
+ def __init__(self, tname, rname, stype, strategy, status, bprice, sprice, bd, stop_loss, perc, btime, stime,\
   nsells, nbuys, investment, lot_size, optype, stkprice):
   
   symbol.ntick += 1
   self.tname = tname # the name for reference
   self.rname = rname # the trading symbol (for NEST PLUS)
-  self.type = type # if index (0) or option (1) or equity (2)
+  self.stype = stype # if index (0) or option (1) or equity (2)
   
   # for trade
   self.strategy = strategy
